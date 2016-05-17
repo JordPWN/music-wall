@@ -1,10 +1,23 @@
+<% @title = "Tracks" %>
 <h1>All Tracks</h1>
-<% @tracks.each do |track| %>
-  <div class="track">
-    <h3><a href="/tracks/<%= track.id %>"><%= track.song_title %></a><small>(by: <%= track.author %>)</small></h3>
-    <p>
-			 <!-- video player goes here! -->
-    </p>
-  </div>
-<% end %>
-<a href="/tracks/new">Add a song!</a>
+<div class = "item-wrapper">
+
+	<% @tracks.each do |track| %>
+	<div class = "item-container">
+	  <div class="track">
+	    <h3><a href="/tracks/<%= track.id %>"><%= track.song_title %></a>
+	    <small>
+	    	<br>
+	    	(by: <%= track.artist %>)
+	    </small>
+	    <span class="count" id="count-<%= track.id %>"><%= track.upvotes.size %></span>
+	    <i class ="fa fa-thumbs-up" id = "<%= track.id %>"></i>
+			<iframe width="50%"  src= "<%= track.url %>"></iframe></h3>
+	    <p>
+				 <!-- video player goes here! -->
+	    </p>
+	    </div>
+
+	  </div>
+	<% end %>
+	</div>

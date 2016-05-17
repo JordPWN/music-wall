@@ -14,9 +14,23 @@
 ActiveRecord::Schema.define(version: 20160516160300) do
 
   create_table "tracks", force: :cascade do |t|
-    t.string "song_title"
-    t.string "author"
-    t.string "url"
+    t.string  "song_title"
+    t.string  "artist"
+    t.integer "rating"
+    t.string  "url"
+    t.integer "user_id"
+  end
+
+  create_table "upvotes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "track_id"
+    t.integer "score"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password"
   end
 
 end

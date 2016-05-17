@@ -1,3 +1,5 @@
+<% @title = "New Track" %>
+
 <% if @track && @track.errors.any? %>
   <div>
     <strong>Some issues with your track, please fix them:</strong>
@@ -10,12 +12,16 @@
 <% end %>
 <form method="post" action="/tracks">
   <div>
-    <label>Author:</label>
-    <input type="text" name="author" value="<%= @track.author %>">
+    <label>Artist:</label>
+    <input type="text" name="artist" value="<%= @track.artist %>">
   </div>
   <div>
     <label>Song Title:</label>
     <input type="text" name="song_title" value="<%= @track.song_title %>">
+  </div>
+  <div>
+    <label>Video URL:</label>
+    <input type="text" name="url" value="<%= @track.url %>">
   </div>
     <input type="submit" value="Submit" >
   </div>
