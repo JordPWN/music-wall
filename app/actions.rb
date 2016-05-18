@@ -18,9 +18,26 @@ before '/tracks/*' do
   redirect '/403' unless logged_in?
 end
 
+get '/403' do
+  erb :'403'
+end
+
 get '/tracks/:id/reviews' do
   @track = Track.find params[:id]
+  @reviews = Review.where(track_id: @track.id)
+  @new_review = Review.new
   erb :'tracks/reviews'
+end
+
+post '/tracks/:id/reviews' do
+  @review = Review.create(
+    track_id: params[:id],
+    user_id: current_user.id,
+    title: params[:title],
+    content: params[:content],
+    rating: params[:rating]
+    )
+    redirect '/tracks'
 end
 
 get '/tracks/:id/review_form' do

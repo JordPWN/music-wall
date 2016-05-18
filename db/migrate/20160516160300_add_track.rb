@@ -22,6 +22,7 @@ class AddTrack < ActiveRecord::Migration
 		create_table :reviews do |t|
 			t.references :user
 			t.references :track
+			t.string :title
 			t.integer :rating
 			t.string :content
 		end

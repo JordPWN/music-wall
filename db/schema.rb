@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20160516160300) do
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "track_id"
+    t.string  "title"
+    t.integer "rating"
+    t.string  "content"
+  end
+
   create_table "tracks", force: :cascade do |t|
     t.string  "song_title"
     t.string  "artist"

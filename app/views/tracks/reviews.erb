@@ -1,3 +1,18 @@
 <% @title = @track.song_title + " by " + @track.artist + " Reviews" %>
-
+<div class = "form-container">
 <%= erb :'tracks/review_form' %>
+</div>
+
+<div class = "item-wrapper" id = "review-page">
+	<% @reviews.each do |rev| %>
+	<div class = "item-container" id = "review-page">
+	  <div class="review">
+	    </small>
+	    <h3><%= rev.title %><small> by: <%= rev.user.username %></small> </h3><br>
+	    <%= rev.rating %><br>
+	    <%= rev.content %>
+	    </div>
+
+	  </div>
+	<% end %>
+	</div>

@@ -61,11 +61,11 @@ body {
 .page-container {
 	width: 100%;
 	min-height: 100%;
-	position: fixed;
+	/*position: fixed;*/
 }
 .videoWrapper {
 	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
+	padding-bottom: 70vh; /* 16:9 */*/
 	padding-top: 25px;
 	height: 0;
 }
@@ -105,12 +105,26 @@ p {
 	justify-content: space-between;
 	height: 79%;
 	flex-grow: 1;
-	max-width: 100%;
+	width: 100%;
 	overflow-y: auto;
 	flex-flow: row wrap;
 	position: absolute;
 	background-color: #97e5f0;
 }
+#review-page {
+	position: static;
+}
+
+/*.review-wrapper{
+
+}
+
+.review-container{
+	display: flex;
+	float: left;
+	border: 3px solid black;
+
+}*/
 
 .item-container {
 	display: flex;

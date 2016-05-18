@@ -10,8 +10,12 @@
 	    	<br>
 	    	(by: <%= track.artist %>)
 	    </small>
-	    <span class="count" id="count-<%= track.id %>"><%= track.upvotes.size %></span>
-	    <i class ="fa fa-thumbs-up" id = "<%= track.id %>"></i>
+
+	    <% if logged_in? %>
+		    <span class="count" id="count-<%= track.id %>"><%= track.upvotes.size %></span>
+		     
+		    <i class="<%= 'voted' if current_user.has_voted?(track) %> fa fa-thumbs-up" id = "<%= track.id %>"> </i>
+			<% end %>
 			<iframe width="50%"  src= "<%= track.url %>"></iframe></h3>
 	    <p>
 				 <!-- video player goes here! -->

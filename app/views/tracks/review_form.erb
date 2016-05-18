@@ -1,0 +1,16 @@
+<form method="post" action="/tracks/<%= @track.id %>/reviews">
+  <div>  Form for Reviews<br>
+    <label>Title:</label>
+    <input type="text" name="title" value="<%= @new_review.title %>">
+  </div>
+  <div>
+    <label>Review:</label>
+    <input type="text" name="content" value="<%= @new_review.content %>">
+  </div>
+  <div>
+    <label>Rating(Out of 5):</label>
+    <input type="text" name="rating" value="<%= @new_review.rating %>">
+  </div>
+    <input type="submit" value="Submit" >
+  </div>
+</form>
